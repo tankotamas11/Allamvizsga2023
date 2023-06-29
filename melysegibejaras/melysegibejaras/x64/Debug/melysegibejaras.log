@@ -1,0 +1,4 @@
+﻿  melysegibejaras.cpp
+C:\Users\tanko\OneDrive\Dokumentumok\probalkozasok\melysegibejaras\melysegibejaras\melysegibejaras.cpp(40,1): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\tanko\OneDrive\Dokumentumok\probalkozasok\melysegibejaras\melysegibejaras\melysegibejaras.cpp(60,17): warning C4244: 'initializing': conversion from '__int64' to 'int', possible loss of data
+  melysegibejaras.vcxproj -> C:\Users\tanko\OneDrive\Dokumentumok\probalkozasok\melysegibejaras\x64\Debug\melysegibejaras.exe

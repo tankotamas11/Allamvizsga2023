@@ -1,0 +1,4 @@
+﻿  Main.cpp
+C:\Users\tanko\OneDrive\Dokumentumok\probalkozasok\foprogram\foprogram\Main.cpp(26,17): warning C4244: 'initializing': conversion from '__int64' to 'int', possible loss of data
+C:\Users\tanko\OneDrive\Dokumentumok\probalkozasok\foprogram\foprogram\Main.cpp(255,38): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  foprogram.vcxproj -> C:\Users\tanko\OneDrive\Dokumentumok\probalkozasok\foprogram\x64\Debug\foprogram.exe

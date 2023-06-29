@@ -1,0 +1,5 @@
+﻿  Main.cpp
+C:\Users\tanko\OneDrive\Dokumentumok\probalkozasok\hidak\hidak\Main.cpp(40,18): warning C4553: '==': result of expression not used; did you intend '='?
+C:\Users\tanko\OneDrive\Dokumentumok\probalkozasok\hidak\hidak\Main.cpp(272,14): warning C4101: 'honap': unreferenced local variable
+C:\Users\tanko\OneDrive\Dokumentumok\probalkozasok\hidak\hidak\Main.cpp(164): warning C4715: 'ElIndex': not all control paths return a value
+  hidak.vcxproj -> C:\Users\tanko\OneDrive\Dokumentumok\probalkozasok\hidak\x64\Debug\hidak.exe
