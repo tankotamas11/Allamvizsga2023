@@ -364,7 +364,11 @@ int main(){
         }
     }
     ///
-
+    ofstream v("sulyokszerintnovekvo.txt");
+    v << elekszama << endl;
+    for (int i = 0; i < elekszama; i++) {
+        v << elek[i].nev1Id << " " << elek[i].nev2Id << endl;
+    }
 
     int* sulyokkal = new int[elekszama];
     int segedSzam = elekszama;
@@ -375,6 +379,7 @@ int main(){
         sorszam = legkisebbEl(matrix, elek, elekszama);
         for (int i = 0; i < elekszama; i++) {
             if (matrix[elek[sorszam].nev1Id][elek[sorszam].nev2Id] == matrix[elek[i].nev1Id][elek[i].nev2Id]) {
+                v << szetesesSzamlalo << " " << elek[i].nev1Id << " " << elek[i].nev2Id << endl;
                 matrix[elek[i].nev1Id][elek[i].nev2Id] = 0;
                 matrix[elek[i].nev2Id][elek[i].nev1Id] = 0;
             }
@@ -416,6 +421,11 @@ int main(){
         cout << i << " -> " << sulyokkal[i] << endl;
     }
     //csokkenobe
+    ofstream v2("sulyokszerintcsokeno.txt");
+    v2 << elekszama << endl;
+    for (int i = 0; i < elekszama; i++) {
+        v2 << elek[i].nev1Id << " " << elek[i].nev2Id << endl;
+    }
     int* sulyokkal2 = new int[elekszama];
     segedSzam = elekszama;
     kompSzam = 0;
@@ -427,6 +437,7 @@ int main(){
         sorszam = legnagyobbEl2(matrix2, elek, elekszama);
         for (int i = 0; i < elekszama; i++) {
             if (matrix2[elek[sorszam].nev1Id][elek[sorszam].nev2Id] == matrix2[elek[i].nev1Id][elek[i].nev2Id] && matrix2[elek[sorszam].nev1Id][elek[sorszam].nev2Id]!=0) {
+                v2 << szetesesSzamlalo << " " << elek[i].nev1Id << " " << elek[i].nev2Id << endl;
                 matrix2[elek[i].nev1Id][elek[i].nev2Id] = 0;
                 matrix2[elek[i].nev2Id][elek[i].nev1Id] = 0;
                 
@@ -457,8 +468,8 @@ int main(){
             szetesett = true;
         }
     }
-
-
+    v.close();
+    v2.close();
     outF << szetesesSzamlalo << endl;
     for (int i = 0; i < szetesesSzamlalo; i++) {
         outF << sulyokkal2[i] << endl;
@@ -513,6 +524,7 @@ int main(){
             }       
         }
     }
+    viz.close();
     cout << "A Girvan-Newman modszer eseteben minden el " << szamlalo << ". alkalommal elvegzett koztessegifok szamitas utan torlodott ki. " << endl;
     ofstream out2("girvanmodszerrel.txt");
     out2 << szamlalo<<endl;

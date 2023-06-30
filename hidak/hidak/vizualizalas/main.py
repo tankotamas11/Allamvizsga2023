@@ -48,12 +48,37 @@ plt.legend()
 
 plt.show()
 
+while True:
+    szam = input("Kérem, ijron be  1-t ha sulyok szerint csokkeno torlest akarja megfigyelni, 2-t ha sulyok szerint novekvo modszerrel , 3ast ha Girvan-Newman modszert szeretne megfigyelni  : ")
+    valasztott = int(szam)
+
+    if 1 <= valasztott <= 3:
+        break
+    else:
+        print("Hibás érték! A számnak 1 és 3 közé kell esnie.")
+
+colors1=['lightblue', 'green', 'yellow']
+colors2=['red','blue','brown']
+
 # Gráf létrehozása
 G = nx.Graph()
 edges=[]
+#ha  sulyokkal akarjuk eljatszani a kirajzolast akkor a bemeneti fajlt atnevezzuk sulyokszerint novekvo vagy csokkeno fajlra
+if valasztott == 1:
+    with open('../sulyokszerintcsokeno.txt','r')as f1:
+        elek=f1.read()
+    f1.close()
+elif valasztott == 2:
+    with open('../sulyokszerintnovekvo.txt','r')as f2:
+        elek=f2.read()
+    f2.close()
 
-with open('../girvanvizualizalas.txt','r')as f:
-    elek= f.read()
+else:
+    with open('../girvanvizualizalas.txt','r')as f3:
+        elek= f3.read()
+    f3.close()
+
+valasztott-=1
 
 adatok=elek.strip().split("\n")
 print (adatok[len(adatok)-1])
@@ -71,43 +96,42 @@ for i in range(1,elekszama+1):
 # Él törlése
 ismetles=-1;
 for i in range(elekszama,len(adatok)):
-    print(i,"ismetlesek szama:",ismetles)
     seged = adatok[i].split(" ")
-    print('legujabb:',seged[0])
+
     if(i==elekszama):
-        print('eleje')
+
 
         G.add_edges_from(edges)
 
         # Csúcsok és élek ábrázolása
         pos = nx.spring_layout(G)
-        nx.draw_networkx_nodes(G, pos, node_color='lightblue', node_size=400)
+        nx.draw_networkx_nodes(G, pos, node_color=colors1[valasztott], node_size=400)
         nx.draw_networkx_edges(G, pos)
         nx.draw_networkx_labels(G, pos, font_color='black', font_size=12)
 
         # Izolált csúcsok különleges formázása
         izolalt_csucsok = [csucs for csucs in G.nodes() if G.degree[csucs] == 0]
-        nx.draw_networkx_nodes(G, pos, nodelist=izolalt_csucsok, node_color='red', node_size=500)
+        nx.draw_networkx_nodes(G, pos, nodelist=izolalt_csucsok, node_color=colors2[valasztott], node_size=500)
         plt.pause(4)
     else:
         if ismetles!=int(seged[0]) :
-            print("itt vagyok")
+
             ismetles=seged[0]
             plt.clf()
             G.clear()
-            for j in range(0, 17):
+            for j in range(0, elekszama):
                 G.add_node(j)
             G.add_edges_from(edges)
 
             # Csúcsok és élek ábrázolása
             pos = nx.spring_layout(G)
-            nx.draw_networkx_nodes(G, pos, node_color='lightblue', node_size=400)
+            nx.draw_networkx_nodes(G, pos, node_color=colors1[valasztott], node_size=400)
             nx.draw_networkx_edges(G, pos)
             nx.draw_networkx_labels(G, pos, font_color='black', font_size=12)
 
             # Izolált csúcsok különleges formázása
             izolalt_csucsok = [csucs for csucs in G.nodes() if G.degree[csucs] == 0]
-            nx.draw_networkx_nodes(G, pos, nodelist=izolalt_csucsok, node_color='red', node_size=500)
+            nx.draw_networkx_nodes(G, pos, nodelist=izolalt_csucsok, node_color=colors2[valasztott], node_size=500)
             plt.pause(2)
 
 
@@ -117,7 +141,7 @@ for i in range(elekszama,len(adatok)):
         edge = (int(seged[1]), int(seged[2]))
         edges = [p for p in edges if p != edge]
         if i == len(adatok)-1:
-            print('vege')
+
             plt.clf()
             G.clear()
             for j in range(0, 17):
@@ -127,14 +151,14 @@ for i in range(elekszama,len(adatok)):
 
             # Csúcsok és élek ábrázolása
             pos = nx.spring_layout(G)
-            nx.draw_networkx_nodes(G, pos, node_color='lightblue', node_size=400)
+            nx.draw_networkx_nodes(G, pos, node_color=colors1[valasztott], node_size=400)
             nx.draw_networkx_edges(G, pos)
             nx.draw_networkx_labels(G, pos, font_color='black', font_size=12)
 
             # Izolált csúcsok különleges formázása
             izolalt_csucsok = [csucs for csucs in G.nodes() if G.degree[csucs] == 0]
-            nx.draw_networkx_nodes(G, pos, nodelist=izolalt_csucsok, node_color='red', node_size=500)
+            nx.draw_networkx_nodes(G, pos, nodelist=izolalt_csucsok, node_color=colors2[valasztott], node_size=500)
             plt.pause(2)
-    # Ábra megjelenítése
-plt.axis('off')
+
+
 plt.show()
