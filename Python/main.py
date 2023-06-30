@@ -42,6 +42,7 @@ print(emails[1].split(" "))
 
 # Gráf létrehozása
 G = nx.Graph()
+F = nx.DiGraph()
 # Csúcsok hozzáadása
 edges = []
 num=0
@@ -65,6 +66,7 @@ for e in emails:
     if email1 >= 0 and email2 >= 0 and email1 != email2:
         sendings[email1]+=1
         edge = (email1, email2)
+        #if edge not in edges:
         edges.append(edge)
         if sendings[email1]<21:
             sizes[email1] = 200
@@ -84,12 +86,16 @@ for e in emails:
     if num%1000 == 0 or num == len(emails):
         plt.clf()
         G.add_edges_from(edges)
-        nx.draw(G, with_labels=True, node_color=colors, node_size=sizes, font_size=12, font_color='black')
+        pos = nx.spring_layout(G)
+        nx.draw(G, pos=pos,with_labels=True, node_color=colors, node_size=sizes, font_size=12, font_color='black')
         plt.pause(4)
 
 
+
+plt.clf()
+F.add_edges_from(edges)
+pos = nx.spring_layout(F)
+nx.draw(F, pos=pos,with_labels=True, node_color=colors, node_size=sizes, font_size=12, font_color='black')
+
 plt.show()
-
-
-        #green
 
