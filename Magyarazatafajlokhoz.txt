@@ -3,6 +3,10 @@ A pythonProject illetve a pythonProject1 mappákban vannak a szűrések és a re
 A melysegibejaras mappában  található az pletyka terjedésére irodott program.
 A foprogram mappaban a csomósodási együttható számítása szerepel.
 A gyengekotes mappában a pletyka terjedéséhez hasonlítható példaprogram van megírva, a cím kissé eltér.
-A hidak nevű mappában a hídak meghatározása és aGirvan Newman algoritmus található .Itt található egy python projekt is, amely ha lefutott s cpp projekt akkor lefuttatható és a cpp eredményeit felhasználva vizualizálást készít .
+A hidak nevű mappában a hídak meghatározása és aGirvan Newman algoritmus található .
+	Itt található egy python projekt is, amely ha lefutott s cpp projekt akkor lefuttatható és a cpp eredményeit felhasználva vizualizálást készít .
 A diplomadolgozatban a LaTex programok találhatóak.
+A BetekintesazAdatbanyaszatban mappában egyetlen személyhez tartozo adatok találhatóak meg amihez társul a Proba mappa.
+	Ebben a kis mappában van ahogy kiválasztottam az adatokból a szükséges infoirmációkat.
 
+Azért nem töltöttem fel az egész adatot, mert túlságosan nagy és kicsomagolása több időbe telhet. 
