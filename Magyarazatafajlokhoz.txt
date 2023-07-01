@@ -1,0 +1,8 @@
+A Python mappaban van az 50 illetve 20 enronos kirajzolasa , megjelenitese.
+A pythonProject illetve a pythonProject1 mappákban vannak a szűrések és a rendezések
+A melysegibejaras mappában  található az pletyka terjedésére irodott program.
+A foprogram mappaban a csomósodási együttható számítása szerepel.
+A gyengekotes mappában a pletyka terjedéséhez hasonlítható példaprogram van megírva, a cím kissé eltér.
+A hidak nevű mappában a hídak meghatározása és aGirvan Newman algoritmus található .Itt található egy python projekt is, amely ha lefutott s cpp projekt akkor lefuttatható és a cpp eredményeit felhasználva vizualizálást készít .
+A diplomadolgozatban a LaTex programok találhatóak.
+
