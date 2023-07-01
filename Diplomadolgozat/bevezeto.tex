@@ -1,0 +1,39 @@
+%----------------------------------------------------------------------------
+\chapter{Bevezető}%\addcontentsline{toc}{chapter}{Bevezető}
+%----------------------------------------------------------------------------
+
+Az emberek életében létfontosságú a kapcsolatok fenntartása, ezáltal minden embernek létrejön egy szociálisan vizsgálható környezete, amelynek következménye egy hálózat létrejötte. Ezen hálózatok sokasága könnyen ábrázolható gráfként, amelyet különböző vizsgálatoknak lehet alávetni.
+Az egyik legkiemelkedőbb mérési lehetőség a kapcsolatokban észlelhető hidak felismerése, valamint különböző algoritmusok alkalmazása a hálózaton (például a Girvan-Newman módszer).
+
+A 21. században a számítógépekkel való kezelhetőség és a mérhetőség jelenti a legjellemzőbb képességet az emberi kapcsolatokból származó hálózatok szempontjából. Az egyik legjobb példa erre az internet, amelyet napjainkban több millió ember használ naponta. Ha elgondolkodunk ezen, láthatjuk, hogy az interneten keresztül létrejött hálózaton rengeteg adat és személy közötti kapcsolat tárolható. Az ilyen hálózatok elérhető adatainak kutatása ma népszerűvé vált, és több informatikai témakört egyesít.
+Egy felhasználható valós adatbázis a kutatások szempontjából az Enron kommunikációs hálózata.\cite{Enron02}
+Ezen adatbázist már többen kutatták, de én szerettem volna egy olyan kutatást végezni, amely hozzájárul az egyetemi tananyag bővítéséhez. Ezért átnéztem több kutatást \cite{Enron01}, és saját elképzelésem alapján alkalmaztam néhány algoritmust a kapott hálózaton.
+Dolgozatom elkészítése során az algoritmusok összehasonlítása mellett adatbányászattal és kommunikációs hálózatok vizsgálatával is foglalkoztam. Minden hálózatnak megvannak sajátos tulajdonságai, amelyek alapján különböznek egymástól, és így kijelenthető, hogy bár lehetnek közös vonások, nem egyformák.
+
+Az egyik szempont, amely alapján sorolhatóak a hálózatok, a kapcsolatok sűrűsége, azaz az általam választott esetben az Enron vállalatban dolgozók közötti üzeneteket tekintettem élnek a gráfokban. Mikor lesz egy kapcsolati hálózat, gráf sűrűsége a lehető legnagyobb? Egy adott gráfnak akkor lesz nagyobb sűrűsége, ha a csúcsok közötti élek száma közelíti a maximális értéket (Egy n csúcsból álló irányítatlan gráfnak maximálisan n*(n-1)/2 éle lehet).
+
+A mérésekhez irányított gráfokként használtam fel az adatokat, ugyanakkor az adatbázis méretét a lehető legkisebbre próbáltam csökkenteni a cég által biztosított fiókok szempontjából. Az így kapott személyeket azonnal vizsgálatok alá lehetett helyezni, valamint az így nyert adatok egy részéből adatvizualizációt is létrehoztam a hálózat átláthatóságának érdekében.
+
+%----------------------------------------------------------------------------
+\section{Cím értelmezése és a kutatás célja} 
+%----------------------------------------------------------------------------
+
+
+
+A cím, "Szociális jelenségek vizsgálata egy valós cég e-mail kommunikációs hálózatán", felhívja figyelmünket arra, hogy ez a hálózat nem egy általunk tervezett gráfot hoz létre, hanem egy cég munkatársai között létrejövő kapcsolatokat ábrázol. Az e-mail alapján határozhatók meg a gráf élei, a küldő és címzett részek alapján.
+
+De miért nevezzük szociális jelenségek vizsgálatának ezt a kutatást?
+Ez nagyon egyszerű válasz. Mivel az e-mailen keresztül történő kapcsolat emberi interakciókat foglal magába. Az így kialakult kapcsolatokban számos szociális jelenség jelentkezhet, például:
+\begin{itemize}
+    \item kommunikációs minták,melyre egy jó illusztráció, ha egy személy előnybe részesiti egy bizonyos csoporttal a kapcsolattartást.
+    \item informacióáramlás és annak hatása, tehát egy emberi véleményt is befolyásolhat különboző  üzenetben szereplő informació
+    \item társas támogatás és kapcsolatépités, ezen jelenség  arra mutat rá, hogy az üzenetváltásokkal tudjuk támogatni egymást, vagy szoros kapcsolatokat is tudunk kialakítani
+    \item utolsó példaként a hálózati struktúrát sorolnám fel, amelyet én is választottam ezen kapcsolati lánc ellemzésére.
+\end{itemize}
+
+
+Miért választottam a hálózati struktúrát a szociális jelenségek közül?
+
+A hálózatokat átalakíthatjuk gráfokká, ezáltal a jelenségek kutathatóak és vizsgálhatóak gráfelméleti szinten. Így a szociális jelenségeket összekapcsolhatom az informatikával, amelynek tudományával az elmúlt években foglalkoztam.
+
+A kutatás célja, hogy létrehozzak egy olyan programot, amely megtalálja a legfontosabb személyt ebben a hálózatban, valamint meghatározza a hidakat, amelyek nélkül a hálózat több részre szakadna. A program fejlesztésével segíteni szeretnék az informatikát tanuló diáktársaknak, hogy valós cégből származó adathálózattal dolgozhassanak, és ne kelljen kitalálniuk egy adott gráfot. Emellett néhány vizualizált eredménnyel is szolgálni szeretnék a Girvan-Newman módszer alkalmazásával.
